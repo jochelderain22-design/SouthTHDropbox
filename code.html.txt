@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mask and the Mirror - Southern Voices Confessions</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-image: url('header-image.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        h2 {
+            color: #d4af37; /* Gold accent for Southern warmth */
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: #333;
+            border: 1px solid #555;
+            color: #e0e0e0;
+            border-radius: 4px;
+        }
+        button {
+            background: #d4af37;
+            color: #000;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #b8941f;
+        }
+        .confession {
+            background: #222;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #d4af37;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #000;
+            color: #888;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            header { height: 40vh; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero-content">
+            <h1>The Mask and the Mirror</h1>
+            <p class="subtitle">Confessions from Southern Voices</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Welcome</h2>
+            <p>In the quiet corners of the South, where porches creak and accents linger, we all wear masks. This is a safe space to shatter the mirror and share your truths—anonymous, raw, and real. Submit your confession below, and let it echo for others.</p>
+        </section>
+
+        <section id="submit">
+            <h2>Share Your Confession</h2>
+            <form id="confessionForm">
+                <label for="name">Southern Alias (Optional, for flavor):</label>
+                <input type="text" id="name" placeholder="e.g., 'Delta Whisper'" maxlength="50">
+
+                <label for="story">Your Story:</label>
+                <textarea id="story" rows="5" placeholder="Tell us what hides behind your mask... (e.g., family secrets, lost loves, unspoken regrets)" required maxlength="1000"></textarea>
+
+                <button type="submit">Unmask and Submit</button>
+            </form>
+            <p style="font-size: 0.8em; color: #888; margin-top: 1rem;">Submissions are anonymous. We'll review and feature select ones publicly.</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Voices Unveiled</h2>
+            <div class="confession">
+                <strong>Delta Whisper:</strong> "Grew up hidin' my dreams under Mama's expectations. Finally admittin' I wanna leave the farm life behind."
+            </div>
+            <div class="confession">
+                <strong>Bayou Shadow:</strong> "That summer storm took more than the levees—it washed away my alibi for what I did to my brother."
+            </div>
+            <!-- Add more dynamically via JS or backend -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 The Mask and the Mirror. All confessions anonymous and confidential. For Southern souls seeking reflection.</p>
+    </footer>
+
+    <script>
+        document.getElementById('confessionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const story = document.getElementById('story').value;
+            if (story) {
+                alert('Thank you for sharing. Your confession has been unmasked. (In a real site, this would submit to a server.)');
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>
